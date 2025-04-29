@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+use App\Command\CalculateCommissionCommand;
+use App\Service\EnvLoader;
+use Symfony\Component\Console\Application;
+
+EnvLoader::load(__DIR__ . '/../.env');
+
+
+$application = new Application('Commission Calculator Application');
+
+$application->add(new CalculateCommissionCommand());
+
+$application->run();
