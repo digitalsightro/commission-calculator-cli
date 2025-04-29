@@ -49,16 +49,25 @@ This app follows a modular and testable architecture:
 
 - PHP 8.3+
 - Composer (https://getcomposer.org/doc/00-intro.md) 
+- API Key from https://exchangeratesapi.io
 
 ## 🧪 Running the Application
 
-Install dependencies:
+1. Install dependencies:
 
 ```bash
 composer install
 ```
 
-Run the command with your CSV input:
+2. Run this command in the terminal:
+```bash
+cp .env.dist .env
+```
+
+3. Replace **YOUR_API_KEY** placeholder from .env file with your exchangeratesapi.io API KEY.
+
+
+4. Run the command with your CSV input:
 ```bash
 php bin/console app:calculate-commission path/to/input.csv
 ```
